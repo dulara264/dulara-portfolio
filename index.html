@@ -15,6 +15,12 @@ font-family:'Inter',sans-serif;
 margin:0;
 background:#f7f9fc;
 color:#222;
+transition:0.3s;
+}
+
+.dark-mode{
+background:#111;
+color:#eee;
 }
 
 .container{
@@ -24,27 +30,37 @@ padding:40px 20px;
 }
 
 .hero{
-padding:120px 0 80px 0;
+display:flex;
+align-items:center;
+gap:40px;
+padding:100px 0 60px;
+flex-wrap:wrap;
+}
+
+.hero img{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
 }
 
 .hero h1{
-font-size:44px;
-margin-bottom:10px;
+font-size:40px;
+margin:0;
 }
 
 .hero p{
-font-size:18px;
 color:#555;
-max-width:600px;
+max-width:500px;
 }
 
 .buttons{
-margin-top:25px;
+margin-top:20px;
 }
 
 .btn{
 display:inline-block;
-padding:12px 22px;
+padding:12px 20px;
 margin-right:10px;
 border-radius:6px;
 text-decoration:none;
@@ -61,13 +77,18 @@ border:1px solid #111;
 color:#111;
 }
 
+.dark-mode .btn-outline{
+border:1px solid #eee;
+color:#eee;
+}
+
 .section{
-margin-top:80px;
+margin-top:70px;
 }
 
 .section h2{
 font-size:26px;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .projects{
@@ -84,20 +105,24 @@ box-shadow:0 4px 20px rgba(0,0,0,0.05);
 transition:0.3s;
 }
 
+.dark-mode .card{
+background:#1a1a1a;
+}
+
 .card:hover{
 transform:translateY(-5px);
 }
 
 .tech{
-margin-top:10px;
 font-size:13px;
+margin-top:10px;
 color:#777;
 }
 
 .skills{
 display:flex;
 flex-wrap:wrap;
-gap:12px;
+gap:10px;
 }
 
 .skill{
@@ -108,11 +133,27 @@ border:1px solid #ddd;
 font-size:14px;
 }
 
+.dark-mode .skill{
+background:#1a1a1a;
+border:1px solid #333;
+}
+
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+cursor:pointer;
+padding:8px 12px;
+border-radius:6px;
+background:#222;
+color:white;
+font-size:14px;
+}
+
 .footer{
 margin-top:100px;
 text-align:center;
 color:#777;
-font-size:14px;
 }
 
 </style>
@@ -121,9 +162,15 @@ font-size:14px;
 
 <body>
 
+<div class="toggle" onclick="toggleDark()">Dark Mode</div>
+
 <div class="container">
 
 <div class="hero">
+
+<img src="IMG_3496.jpeg">
+
+<div>
 
 <h1>Dulara Madusanka</h1>
 
@@ -133,7 +180,7 @@ AI & Machine Learning Undergraduate building intelligent systems using Machine L
 
 <div class="buttons">
 
-<a class="btn btn-dark" href="#">View Projects</a>
+<a class="btn btn-dark" href="resume.pdf">Download Resume</a>
 
 <a class="btn btn-outline" href="https://github.com/dulara264">GitHub</a>
 
@@ -143,17 +190,17 @@ AI & Machine Learning Undergraduate building intelligent systems using Machine L
 
 </div>
 
+</div>
 
 <div class="section">
 
 <h2>About</h2>
 
 <p>
-AI-focused undergraduate at Rajarata University interested in machine learning, deep learning, and intelligent systems. I enjoy building practical AI applications including computer vision models, predictive analytics systems, and retrieval-augmented generation assistants.
+AI-focused undergraduate at Rajarata University interested in machine learning, deep learning, and intelligent systems. I enjoy building real-world AI applications including computer vision systems, predictive models, and RAG-based knowledge assistants.
 </p>
 
 </div>
-
 
 <div class="section">
 
@@ -173,6 +220,10 @@ AI system that answers questions from PDF documents using embeddings, FAISS vect
 Python • Sentence Transformers • FAISS • LLM
 </div>
 
+<br>
+
+<a href="https://github.com/dulara264">View Code</a>
+
 </div>
 
 
@@ -188,6 +239,10 @@ Deep learning system that automatically records attendance using facial recognit
 Python • OpenCV • Deep Learning
 </div>
 
+<br>
+
+<a href="https://github.com/dulara264">View Code</a>
+
 </div>
 
 
@@ -196,12 +251,16 @@ Python • OpenCV • Deep Learning
 <h3>Smart Waste Classification</h3>
 
 <p>
-Convolutional neural network model that classifies waste into recyclable categories using computer vision.
+CNN model that classifies waste into recyclable categories using computer vision.
 </p>
 
 <div class="tech">
 TensorFlow • CNN • Computer Vision
 </div>
+
+<br>
+
+<a href="https://github.com/dulara264">View Code</a>
 
 </div>
 
@@ -247,6 +306,14 @@ TensorFlow • CNN • Computer Vision
 </div>
 
 </div>
+
+<script>
+
+function toggleDark(){
+document.body.classList.toggle("dark-mode");
+}
+
+</script>
 
 </body>
 </html>
