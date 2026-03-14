@@ -5,94 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dulara Madusanka | AI Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
 body{
-    margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background:#f7f9fc;
-    color:#222;
+font-family:'Inter',sans-serif;
+margin:0;
+background:#f9fafc;
+color:#222;
 }
 
 .container{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-h1{
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-h2{
-    margin-top:60px;
-    font-size:26px;
-}
-
-p{
-    line-height:1.6;
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
 }
 
 .hero{
-    padding:80px 20px 40px 20px;
+padding:120px 20px 80px;
 }
 
-.tagline{
-    color:#555;
-    font-size:18px;
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
 }
 
-.buttons a{
-    text-decoration:none;
-    margin-right:15px;
-    padding:10px 18px;
-    border-radius:6px;
-    border:1px solid #333;
-    color:#333;
-    font-size:14px;
+.hero p{
+font-size:18px;
+color:#555;
+max-width:600px;
 }
 
-.buttons a:hover{
-    background:#333;
-    color:white;
+.buttons{
+margin-top:25px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 22px;
+margin-right:10px;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+}
+
+.btn-dark{
+background:#111;
+color:white;
+}
+
+.btn-outline{
+border:1px solid #111;
+color:#111;
+}
+
+.section{
+margin-top:80px;
+}
+
+.section h2{
+font-size:26px;
+margin-bottom:20px;
 }
 
 .projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+display:flex;
+flex-wrap:wrap;
+gap:12px;
 }
 
 .skill{
-    background:white;
-    padding:8px 14px;
-    border-radius:6px;
-    border:1px solid #ddd;
-    font-size:14px;
+background:white;
+padding:8px 14px;
+border-radius:6px;
+border:1px solid #ddd;
+font-size:14px;
 }
 
 .footer{
-    margin-top:80px;
-    text-align:center;
-    color:#777;
-    font-size:14px;
+margin-top:100px;
+text-align:center;
+color:#777;
+font-size:14px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -100,26 +117,30 @@ p{
 <div class="container">
 
 <div class="hero">
-<h1>Dulara Madusanka</h1>
-<p class="tagline">AI & Machine Learning Undergraduate</p>
 
-<p>
-Building intelligent systems using Machine Learning, Deep Learning, and Generative AI.
-</p>
+<h1>Dulara Madusanka</h1>
+
+<p>AI & Machine Learning Undergraduate focused on building intelligent systems using Machine Learning, Deep Learning, and Generative AI.</p>
 
 <div class="buttons">
-<a href="https://github.com/dulara264">GitHub</a>
-<a href="#">LinkedIn</a>
-<a href="#">Resume</a>
-</div>
+<a class="btn btn-dark" href="#">View Projects</a>
+<a class="btn btn-outline" href="https://github.com/dulara264">GitHub</a>
+<a class="btn btn-outline" href="#">LinkedIn</a>
 </div>
 
+</div>
+
+<div class="section">
 
 <h2>About</h2>
+
 <p>
-I am an AI-focused undergraduate at Rajarata University interested in machine learning, deep learning, and intelligent systems. I enjoy building practical AI systems including computer vision models, predictive analytics, and retrieval-augmented generation applications.
+AI-focused undergraduate at Rajarata University interested in machine learning, deep learning, and intelligent systems. I enjoy building real-world AI applications including computer vision systems, predictive models, and retrieval-augmented generation assistants.
 </p>
 
+</div>
+
+<div class="section">
 
 <h2>Projects</h2>
 
@@ -132,7 +153,7 @@ I am an AI-focused undergraduate at Rajarata University interested in machine le
 
 <div class="card">
 <h3>Face Recognition Attendance System</h3>
-<p>Deep learning system that records attendance automatically using facial recognition.</p>
+<p>Deep learning system for automated attendance using facial recognition.</p>
 </div>
 
 <div class="card">
@@ -142,11 +163,13 @@ I am an AI-focused undergraduate at Rajarata University interested in machine le
 
 </div>
 
+</div>
+
+<div class="section">
 
 <h2>Skills</h2>
 
 <div class="skills">
-
 <div class="skill">Python</div>
 <div class="skill">Machine Learning</div>
 <div class="skill">Deep Learning</div>
@@ -155,17 +178,18 @@ I am an AI-focused undergraduate at Rajarata University interested in machine le
 <div class="skill">FAISS</div>
 <div class="skill">SQL</div>
 <div class="skill">Git</div>
+</div>
 
 </div>
 
+<div class="section">
 
 <h2>Contact</h2>
 
-<p>
-Email: dulara264@gmail.com<br>
-GitHub: github.com/dulara264
-</p>
+<p>Email: dulara264@gmail.com</p>
+<p>GitHub: github.com/dulara264</p>
 
+</div>
 
 <div class="footer">
 © 2026 Dulara Madusanka
