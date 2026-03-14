@@ -9,19 +9,17 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
-margin:0;
 font-family:'Inter',sans-serif;
+margin:0;
 background:#f7f9fc;
 color:#222;
 transition:0.3s;
 }
 
-.dark{
+.dark-mode{
 background:#111;
 color:#eee;
 }
@@ -32,64 +30,45 @@ margin:auto;
 padding:40px 20px;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-}
-
-nav a{
-text-decoration:none;
-margin-left:20px;
-color:#333;
-font-size:14px;
-}
-
 .hero{
-height:90vh;
 display:flex;
 align-items:center;
-justify-content:center;
-text-align:center;
-background:linear-gradient(135deg,#f7f9fc,#e9eef9);
+gap:40px;
+padding:120px 0 80px;
+flex-wrap:wrap;
 }
 
 .hero img{
-width:130px;
-height:130px;
+width:150px;
+height:150px;
 border-radius:50%;
-margin-bottom:20px;
+object-fit:cover;
 }
 
 .hero h1{
-font-size:42px;
+font-size:40px;
 margin-bottom:5px;
-}
-
-.hero h3{
-font-weight:400;
-color:#666;
-margin-bottom:15px;
 }
 
 .hero p{
 color:#555;
-max-width:600px;
-margin:auto;
-margin-bottom:25px;
+max-width:500px;
+}
+
+.buttons{
+margin-top:20px;
 }
 
 .btn{
+display:inline-block;
 padding:12px 20px;
+margin-right:10px;
 border-radius:6px;
 text-decoration:none;
 font-size:14px;
-margin:5px;
-display:inline-block;
 }
 
-.btn-primary{
+.btn-dark{
 background:#111;
 color:white;
 }
@@ -99,14 +78,18 @@ border:1px solid #111;
 color:#111;
 }
 
+.dark-mode .btn-outline{
+border:1px solid #eee;
+color:#eee;
+}
+
 .section{
-padding:80px 0;
+margin-top:90px;
 }
 
 .section h2{
-text-align:center;
-margin-bottom:40px;
-font-size:28px;
+font-size:26px;
+margin-bottom:25px;
 }
 
 .projects{
@@ -123,22 +106,25 @@ box-shadow:0 4px 20px rgba(0,0,0,0.05);
 transition:0.3s;
 }
 
+.dark-mode .card{
+background:#1a1a1a;
+}
+
 .card:hover{
-transform:translateY(-8px) scale(1.02);
+transform:translateY(-8px);
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 .tech{
+margin-top:10px;
 font-size:13px;
 color:#777;
-margin-top:10px;
 }
 
 .skills{
 display:flex;
 flex-wrap:wrap;
-justify-content:center;
-gap:12px;
+gap:10px;
 }
 
 .skill{
@@ -149,22 +135,28 @@ border:1px solid #ddd;
 font-size:14px;
 }
 
-.footer{
-text-align:center;
-padding:40px 0;
-color:#777;
+.dark-mode .skill{
+background:#1a1a1a;
+border:1px solid #333;
 }
 
 .toggle{
 position:fixed;
 top:20px;
 right:20px;
-background:#111;
-color:white;
+cursor:pointer;
 padding:8px 12px;
 border-radius:6px;
-cursor:pointer;
-font-size:13px;
+background:#222;
+color:white;
+font-size:14px;
+}
+
+.footer{
+margin-top:100px;
+text-align:center;
+color:#777;
+font-size:14px;
 }
 
 </style>
@@ -172,73 +164,116 @@ font-size:13px;
 
 <body>
 
-<div class="toggle" onclick="toggle()">Dark Mode</div>
-
-<section class="hero">
-
-<div>
-
-<img src="IMG_3496.jpeg">
-
-<h1>Dulara Madusanka</h1>
-
-<h3>AI & Machine Learning Engineer</h3>
-
-<p>
-Building intelligent systems using Machine Learning, Deep Learning and Generative AI.
-</p>
-
-<a href="#projects" class="btn btn-primary">View Projects</a>
-
-<a href="resume.pdf" class="btn btn-outline">Download Resume</a>
-
-</div>
-
-</section>
+<div class="toggle" onclick="toggleDark()">Dark</div>
 
 <div class="container">
 
-<section class="section">
+<div class="hero">
+
+<img src="IMG_3496.jpeg">
+
+<div>
+
+<h1>Dulara Madusanka</h1>
+
+<p>
+AI & Machine Learning Undergraduate building intelligent systems with Machine Learning, Deep Learning and Generative AI.
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-dark" href="resume.pdf">Download Resume</a>
+
+<a class="btn btn-outline" href="https://github.com/dulara264">GitHub</a>
+
+<a class="btn btn-outline" href="#">LinkedIn</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section">
 
 <h2>About</h2>
 
-<p style="text-align:center;max-width:700px;margin:auto;">
-AI-focused undergraduate at Rajarata University interested in machine learning, deep learning, and intelligent systems. I enjoy building practical AI systems including computer vision models, predictive analytics, and retrieval-augmented generation assistants.
+<p>
+AI-focused undergraduate at Rajarata University interested in machine learning, deep learning, and intelligent systems. I enjoy building practical AI applications including computer vision models, predictive analytics systems, and retrieval-augmented generation assistants.
 </p>
 
-</section>
+</div>
 
 
-<section class="section" id="projects">
+<div class="section">
 
-<h2>Projects</h2>
+<h2>Featured Projects</h2>
 
 <div class="projects">
 
 <div class="card">
+
 <h3>RAG Document Knowledge Assistant</h3>
-<p>AI system that answers questions from PDF documents using embeddings, FAISS vector search, and LLMs.</p>
-<div class="tech">Python • Sentence Transformers • FAISS • LLM</div>
+
+<p>
+AI system that answers questions from PDF documents using embeddings, FAISS vector search, and LLM-based response generation.
+</p>
+
+<div class="tech">
+Python • Sentence Transformers • FAISS • LLM
 </div>
 
+<br>
+
+<a href="https://github.com/dulara264">View Code</a>
+
+</div>
+
+
 <div class="card">
+
 <h3>Face Recognition Attendance System</h3>
-<p>Deep learning system that automatically records attendance using facial recognition.</p>
-<div class="tech">Python • OpenCV • Deep Learning</div>
+
+<p>
+Deep learning system that automatically records attendance using facial recognition.
+</p>
+
+<div class="tech">
+Python • OpenCV • Deep Learning
 </div>
+
+<br>
+
+<a href="https://github.com/dulara264">View Code</a>
+
+</div>
+
 
 <div class="card">
+
 <h3>Smart Waste Classification</h3>
-<p>CNN model that classifies waste into recyclable categories using computer vision.</p>
-<div class="tech">TensorFlow • CNN • Computer Vision</div>
+
+<p>
+CNN model that classifies waste into recyclable categories using computer vision.
+</p>
+
+<div class="tech">
+TensorFlow • CNN • Computer Vision
+</div>
+
+<br>
+
+<a href="https://github.com/dulara264">View Code</a>
+
 </div>
 
 </div>
 
-</section>
+</div>
 
 
-<section class="section">
+<div class="section">
 
 <h2>Skills</h2>
 
@@ -255,21 +290,20 @@ AI-focused undergraduate at Rajarata University interested in machine learning, 
 
 </div>
 
-</section>
+</div>
 
 
-<section class="section">
+<div class="section">
 
 <h2>Contact</h2>
 
-<p style="text-align:center">
+<p>
 Email: dulara264@gmail.com<br>
 GitHub: github.com/dulara264
 </p>
 
-</section>
-
 </div>
+
 
 <div class="footer">
 
@@ -277,10 +311,12 @@ GitHub: github.com/dulara264
 
 </div>
 
+</div>
+
 <script>
 
-function toggle(){
-document.body.classList.toggle("dark");
+function toggleDark(){
+document.body.classList.toggle("dark-mode");
 }
 
 </script>
